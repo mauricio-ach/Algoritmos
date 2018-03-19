@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="busquedas" default="busquedas.jar" basedir="." >
+
+  <property name="build.dir" value="build" />
+  <property name="src.dir"   value="src" />
+  <property name="doc.dir"   value="doc" />
+
+  <target name="busquedas.jar" depends="compile.buscador">
+    <jar jarfile="busquedas.jar">
+      <zipfileset dir="${build.dir}" prefix="" />
+      <manifest>
+	<attribute name="Main-Class" value="busquedas.Interfaz"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="compile.buscador">
+    <mkdir dir="${build.dir}"/>
+    <javac srcdir="${src.dir}"
+	   destdir="${build.dir}"
+	   debug="true"
+	   debuglevel="lines,vars,source"
+	   includeantruntime="false"
+	   deprecation="true"
+	   nowarn="off">
+    </javac>
+  </target>
+
+  <target name="doc" depends="busquedas.jar">
+    <mkdir dir="${doc.dir}"/>
+    <javadoc packagenames="busquedas.*"
+	     sourcepath="src"
+	     defaultexcludes="yes"
+	     destdir="${doc.dir}"
+	     charset="UTF-8"
+	     author="false"
+	     version="false"
+	     use="true"
+	     windowtitle="Implementación Busquedas">
+      <doctitle><![CDATA[<h1>Implementación Busquedas</h1>]]></doctitle>
+      <link href="http://docs.oracle.com/javase/8/docs/api/" />
+    </javadoc>
+  </target>
+
+  <target name="clean">
+    <delete file="busquedas.jar"/>
+    <delete dir="${build.dir}"/>
+    <delete dir="${doc.dir}"/>
+  </target>
+
+</project>

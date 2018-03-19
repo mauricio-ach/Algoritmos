@@ -1,0 +1,27 @@
+Nombre: José Fernando Reyes García
+
+Instrucciones de Compilacion y Ejecucion
+  Para compilar basta con ejecutar el comando
+  $ ant
+  Esto generará un archivo .jar para ser ejecutado con el comando
+  & java -jar Independiente.jar [archivo]
+  Donde [archivo] es el nombre del archivo de texto que contiene la información suficiente
+  para generar una grafica.
+  
+Formato de Entrada
+  El archivo que contiene la información de la grafica debe tener el siguiente formato:
+    -La primer línea contiene todos los vértices de la gráfica separados unicamente por coma ','.
+      *Los id puede ser cualquier cadena.
+      *Si no hay comas, toda la línea contará como un único vértice.
+      *Si después de la coma, hay un espacio, éste contará para el id del vértice.
+      *Si solamente hay comas, se genera solo un vértice con id vacío ("")
+    -Las siguientes líneas deben ser solamente pares de vértices separados por una coma.
+      *Si hay tres o más palabras separadas por comas, el programa rechaza la entrada.
+      *Si tampoco hay palabras o solo una, el programa rechaza la entrada.
+      *Si en los vértices, hay uno que no declaraste en la primer línea, el programa te señalara ese error con NoSuchElementException.
+      
+Nota: En la carpeta hay un archivo de prueba, puede usarse para probar el programa. Puedes modificarlo para probar otra gráfica. O bien,
+      puedes indicar otro archivo de texto, siempre y cuando señales correctamente la dirección del archivo.
+  
+  
+  
