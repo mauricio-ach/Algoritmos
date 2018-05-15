@@ -1,0 +1,23 @@
+Programa para obtener un árbol generador, ya sea en modo BFS ó DFS
+
+Para compilar use el comando ant:
+$ ant
+
+Esto generará un archivo llamado arbol.jar
+
+Para ejecutar utilice el comando:
+$ java -jar arbol.jar {nombre de archivo} {opcion de generacion} 
+
+Donde:
+{nombre de archivo} es el archivo donde se encuentra la lista de vertices y aristas
+{opcion de generacion} el tipo de generacion el cual puede ser:
+- DFS
+- BFS
+
+Para generar la documentacion use:
+$ ant doc
+
+Para remover todo los generados use:
+$ ant clean
+
+Araujo Chávez Mauricio 312210047  
